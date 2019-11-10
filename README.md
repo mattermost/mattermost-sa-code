@@ -6,6 +6,7 @@ The workflow to add new scripts follows the same rules as always:
 2. Create a branch
 3. Commit your changes
 4. Create a pull request and add minimum 1 reviewer
+5. Delete your branch after the merge
 
 |folder|purpose|language|author|
 |---|---|---|---|
