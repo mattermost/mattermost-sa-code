@@ -1,5 +1,12 @@
 # This repository stores helpful scripts that have been used by the Solution Architects at Mattermost
 
+The workflow to add new scripts follows the same rules as always:
+
+1. Clone the repository
+2. Create a branch
+3. Commit your changes
+4. Create a pull request and add minimum 1 reviewer
+
 |folder|purpose|language|author|
 |---|---|---|---|
 |ad-scripts |Powershell script to translate AD attributes into JSONL for bulkimport |PowerShell |Christian Johannsen |
