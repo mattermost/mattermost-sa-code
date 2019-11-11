@@ -10,7 +10,7 @@ The workflow to add new scripts follows the same rules as always:
 
 |folder|purpose|language|author|
 |---|---|---|---|
-|ad-scripts |Powershell script to translate AD attributes into JSONL for bulkimport |PowerShell |Christian Johannsen |
+|ad-scripts |Powershell script to translate AD attributes into JSONL for bulkimport. Usage video: https://www.youtube.com/watch?v=4AsGu0qacvI |PowerShell |Christian Johannsen |
 |get-data |Scripts to gather data from Mattermost (Channels, Posts, Users etc.) |python |Christian Johannsen |
 |live-importer |Script to import data from another Mattermost server (Test to Prod etc.) |python |Christian Johannsen |
 |set-user-attributes |Script to set user attributes from a central location |python |Christian Johannsen |
