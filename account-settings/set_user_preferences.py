@@ -4,7 +4,6 @@ import json
 # -------------------------------------------------------------------------
 # Mattermost server
 url = "http://35.153.176.26:8065"
-team_name = "demoteam"
 login_user = "admin@mattermost.com"
 login_pass = "MattermostDemo,1"
 
