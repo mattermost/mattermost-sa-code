@@ -4,7 +4,6 @@ import json
 # -------------------------------------------------------------------------
 # Mattermost server
 url = "http://35.153.176.26:8065"
-team_name = "demoteam"
 login_user = "admin@mattermost.com"
 login_pass = "MattermostDemo,1"
 
@@ -14,13 +13,29 @@ login_pass = "MattermostDemo,1"
 #login_user = raw_input("Enter Mattermost username: ")
 #login_pass = raw_input("Enter Mattermost password: ")
 grouping = raw_input("Enter Sidebar grouping (by_type or none): ")
-grouping = '"'+grouping+'"'
+if grouping == "by_type" or grouping == "none":
+    grouping = '"'+grouping+'"'
+else:
+    print("Please ensure the right input.")
+    exit()
 unreads_at_top = raw_input("Enter Sidebar unreads on top (true or false): ")
-unreads_at_top = '"'+unreads_at_top+'"'
+if unreads_at_top == "true" or unreads_at_top == "false":
+    unreads_at_top = '"'+unreads_at_top+'"'
+else:
+    print("Please ensure the right input.")
+    exit()
 favorite_at_top = raw_input("Enter Sidebar favorite on top (true or false): ")
-favorite_at_top = '"'+favorite_at_top+'"'
+if favorite_at_top == "true" or favorite_at_top == "false":
+    favorite_at_top = '"'+favorite_at_top+'"'
+else:
+    print("Please ensure the right input.")
+    exit()
 sorting = raw_input("Enter Sidebar sorting (recent or alpha): ")
-sorting = '"'+sorting+'"'
+if sorting == "recent" or sorting == "alpha":
+    sorting = '"'+sorting+'"'
+else:
+    print("Please ensure the right input.")
+    exit()
 
 # -------------------------------------------------------------------------
 # Please do not change
@@ -42,30 +57,22 @@ def login(login_url):
 def get_users(i):
     print("Actual page")
     print(i)
-    login(login_url)
     post_url = url+"/api/v4/users"
     payload = {'page': i, 'per_page': '200'}
     response = requests.get(post_url, headers=hed, params=payload)
     users = response.json()
     for user in users:
-        for k,v in user.items():
-            if k == "id":
-                user_id = v
-                set_prefs(user_id)
-                get_prefs(user_id)
+        print("setting preferences for user: "+user['username'])
+        user_id = user['id']
+        set_prefs(user_id)
+        # get_prefs(user_id) - optional, just for testing
 
 def get_prefs(id):
-    login(login_url)
-    print("ID: "+id)
     post_url = url+"/api/v4/users/"+id+"/preferences"
     response = requests.get(post_url, headers=hed)
     info = response.json()
-    print(info)
-    for i in info:
-        print(i)
 
 def set_prefs(id):
-    login(login_url)
     post_url = url+"/api/v4/users/"+id+"/preferences"
     payload = [
         {
