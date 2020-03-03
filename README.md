@@ -16,4 +16,4 @@ The workflow to add new scripts follows the same rules as always:
 |set-user-attributes |Script to set user attributes from a central location |python |Christian Johannsen |
 |upload-files |Script to upload files to Mattermost |python |Christian Johannsen |
 |websocket-listener  |Script to check for websocket events to develop reactions (Sharepoint site, Message popup, alarm etc.) |python |Christian Johannsen |
-|account-settings  |User input script to set Account menu settings (Sidebar) for all users |python |Christian Johannsen |
+|account-settings  |User input script to set specific Account menu settings (Sidebar) for all users. The script will read all active users and give the option for the administrator to set the sidebar settings for Unreads, Favorites, and Recency/Alphabetical. It will change the settings for each user every time it is run  |python |Christian Johannsen |
